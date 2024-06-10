@@ -1,15 +1,11 @@
+import pytest
 from  baker import cake
 
-# case 1: one ingredient cake, recipe only for one ingredient same quantity
-# case 1a: one ingredient cake, recipe only for one ingredient same quantity, division result is float > 0
-# case 1b: one ingredient cake, recipe only for one ingredient same quantity, division result is float > 0
-# case 2: one ingredient cake, recipe only another ingredient
-# case 3: cake with several ingredients, recipe with several ingredients, partial overlap, cake not possible
-# case 4: cake with several ingredients, recipe with several, recipe is subs. of ingredients, cake possible
+# STEP 1: write the production code to ensure the test passes. 
+def test_returns_0_if_no_ingredients_available():
+    available = {}
+    recipe = {"flour": 400}
+    max_cakes = cake(available, recipe)
+    assert max_cakes == 0
 
-
-def test_cake_only_one_ingredient():
-    ingredients = {"flour": 500}
-    recipe = {"flour": 500}
-    result = cake(ingredients, recipe)
-    assert result == 1
+# STEP 2: now it's time to write your own tests.
